@@ -1,0 +1,18 @@
+graph TD
+    subgraph  
+    MSS(Meat Supply Station) -->|Distributes Meat| Channel[Meat Channel]
+    end
+
+    subgraph  
+    Channel -->|Meat| A[Worker A]
+    Channel -->|Meat| B[Worker B]
+    Channel -->|Meat| C[Worker C]
+    Channel -->|Meat| D[Worker D]
+    Channel -->|Meat| E[Worker E]
+    end
+
+    A -->|Processed Meat| PA((Processed by A))
+    B -->|Processed Meat| PB((Processed by B))
+    C -->|Processed Meat| PC((Processed by C))
+    D -->|Processed Meat| PD((Processed by D))
+    E -->|Processed Meat| PE((Processed by E))
