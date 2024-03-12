@@ -1,5 +1,7 @@
 package meat
 
+import "time"
+
 type MeatType int
 
 // 使用 Enum 定義肉的種類
@@ -16,7 +18,19 @@ type Meat struct {
 	Type MeatType
 }
 
-// // 未來可依據 locale 擴充
+const (
+	BeefProcessingTime    = 1 * time.Second
+	PorkProcessingTime    = 2 * time.Second
+	ChickenProcessingTime = 3 * time.Second
+)
+
+var ProcessibngTimes = map[MeatType]time.Duration{
+	Beef:    BeefProcessingTime,
+	Pork:    PorkProcessingTime,
+	Chicken: ChickenProcessingTime,
+}
+
+// 未來可依據 locale 擴充
 func (mt MeatType) String() string {
 	switch mt {
 	case Beef:
