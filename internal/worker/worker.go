@@ -11,13 +11,14 @@ import (
 func StartWorker(ID int, meatCh <-chan meat.Meat, wg *sync.WaitGroup) {
 	defer wg.Done()
 
+	now := time.Now().Format("2006-01-02 15:04:05")
 	for m := range meatCh {
 		// 使用員工編號和肉的編號來確認沒有人取到相同的肉
-		fmt.Printf("%d 員工在 %v 取得編號為 %d 的 %v", ID, time.Now(), m.ID, m.Type)
+		fmt.Printf("%d 號員工在 %v 取得編號為 %d 的 %v\n", ID, now, m.ID, m.Type)
 
 		// 模擬處理肉的時間
 		time.Sleep(meat.ProcessingTime(m.Type))
 
-		fmt.Printf("%d 員工在 %v 處理完編號為 %d 的 %v", ID, time.Now(), m.ID, m.Type)
+		fmt.Printf("%d 員工在 %v 處理完編號為 %d 的 %v\n", ID, now, m.ID, m.Type)
 	}
 }
