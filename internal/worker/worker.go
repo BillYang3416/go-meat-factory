@@ -19,6 +19,6 @@ func StartWorker(ID int, meatCh <-chan meat.Meat, wg *sync.WaitGroup) {
 		// 模擬處理肉的時間
 		time.Sleep(meat.ProcessingTime(m.Type))
 
-		fmt.Printf("%d 員工在 %v 處理完編號為 %d 的 %v\n", ID, now, m.ID, m.Type)
+		fmt.Printf("%d 號員工在 %v 處理完編號為 %d 的 %v\n", ID, now, m.ID, m.Type)
 	}
 }
