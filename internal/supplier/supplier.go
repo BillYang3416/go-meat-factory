@@ -7,13 +7,14 @@ func SupplyMeat(totalMeat, numOfBeef, numOfPork, numOfChicken int) []meat.Meat {
 	meats := make([]meat.Meat, totalMeat)
 
 	for i := 0; i < totalMeat; i++ {
+		ID := i + 1
 		switch {
 		case i < numOfBeef:
-			meats = append(meats, meat.Meat{ID: i, Type: meat.Beef})
+			meats[i] = meat.Meat{ID: ID, Type: meat.Beef}
 		case i < numOfBeef+numOfPork:
-			meats = append(meats, meat.Meat{ID: i, Type: meat.Pork})
+			meats[i] = meat.Meat{ID: ID, Type: meat.Pork}
 		default:
-			meats = append(meats, meat.Meat{ID: i, Type: meat.Chicken})
+			meats[i] = meat.Meat{ID: ID, Type: meat.Chicken}
 		}
 	}
 
