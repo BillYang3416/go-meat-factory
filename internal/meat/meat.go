@@ -24,7 +24,7 @@ const (
 	ChickenProcessingTime = 3 * time.Second
 )
 
-var ProcessibngTimes = map[MeatType]time.Duration{
+var ProcessingTimes = map[MeatType]time.Duration{
 	Beef:    BeefProcessingTime,
 	Pork:    PorkProcessingTime,
 	Chicken: ChickenProcessingTime,
