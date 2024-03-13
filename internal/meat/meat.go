@@ -15,6 +15,7 @@ const (
 )
 
 type Meat struct {
+	ID   int // 用來辨識沒有員工取到相同的肉
 	Type MeatType
 }
 
