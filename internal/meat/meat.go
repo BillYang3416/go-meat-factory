@@ -24,7 +24,7 @@ const (
 	ChickenProcessingTime = 3 * time.Second
 )
 
-var ProcessingTimes = map[MeatType]time.Duration{
+var processingTimes = map[MeatType]time.Duration{
 	Beef:    BeefProcessingTime,
 	Pork:    PorkProcessingTime,
 	Chicken: ChickenProcessingTime,
@@ -42,4 +42,8 @@ func (mt MeatType) String() string {
 	default:
 		return "Unknown"
 	}
+}
+
+func ProcessingTime(mt MeatType) time.Duration {
+	return processingTimes[mt]
 }
