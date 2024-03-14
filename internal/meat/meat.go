@@ -35,13 +35,13 @@ var processingTimes = map[MeatType]time.Duration{
 func (mt MeatType) String() string {
 	switch mt {
 	case Beef:
-		return "Beef"
+		return "牛肉"
 	case Pork:
-		return "Pork"
+		return "豬肉"
 	case Chicken:
-		return "Chicken"
+		return "雞肉"
 	default:
-		return "Unknown"
+		return "不明的肉類"
 	}
 }
 
