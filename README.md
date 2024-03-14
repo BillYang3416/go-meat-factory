@@ -2,6 +2,14 @@
 
 使用 Golang 和 Concurrency 的概念撰寫該程式。
 
+## 程式目錄說明
+
+- `cmd/go-meat-factory` : 程式啟動點
+- `internal/distributer` : 負責啟動 workers，並將肉放到 Channel
+- `internal/meat` : 定義肉品種類和肉品的處理時間
+- `internal/supplier` : 負責將肉類進貨，依據常數產生相對應的肉品總數
+- `internal/worker` : 負責取得和處理肉品，並印出時間
+
 ## 如何啟動程式
 
 - clone repository
