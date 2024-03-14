@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"sync"
 
 	"github.com/billyang3416/go-meat-factory/internal/distributer"
@@ -16,7 +17,11 @@ const (
 	numOfChicken = 5
 )
 
+var Version = "developement"
+
 func main() {
+
+	fmt.Println("程式版本: ", Version)
 
 	// 1. 進貨肉
 	meats := supplier.SupplyMeat(totalMeat, numOfBeef, numOfPork, numOfChicken)
